@@ -1,0 +1,30 @@
+/* Documento de las media para la configuracion de la resolución */
+/* Resolucion del index*/
+@media all and (max-width: 1024px){
+	#main{
+		padding: 5%;
+		height: auto;
+		max-height: none;
+	}
+	#box-section{
+		width: 98vw;
+		max-width: 98vw;
+	}
+	#footer{
+		padding-bottom: 2%;
+	}
+}
+@media all and (max-width: 512px){
+	#main{
+		padding: 0%;
+		height: 90vh;
+		max-height: 90vh;
+	}
+	#box-section{
+		width: 100vw;
+		max-width: 100vw;
+	}
+	#footer{
+		padding-bottom: 0%;
+	}
+}

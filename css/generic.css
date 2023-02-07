@@ -1,0 +1,40 @@
+/* Documento para la configuracion de todos los elementos preterminados */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+@font-face{
+    font-family:AdobeArabic;
+    src:url(../fonts/AdobeArabic-Vicwui.otf);
+}
+body{ /* Configuracion principal de los bodys */
+    background-color: rgba(92,92,96,0.2);
+    width: 100vw;
+	max-width: 100vw;
+    height: 100vh;
+	max-height: 100vh;
+}
+/*configuracion para quitar botones de los input*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;}
+input[type=number] {-moz-appearance:textfield;}
+input[type=date]::-webkit-inner-spin-button, 
+input[type=date]::-webkit-outer-spin-button {-webkit-appearance: none;}
+input[type=date] {-moz-appearance:textfield;}
+h1{
+	color: rgb(215,215,215);
+	text-align: center;
+	padding: 0;
+	margin: 0 0 3% 0;
+	font-family: sans-serif, Georgia, AdobeArabic;
+}
+p{
+	color: rgb(215,215,215);
+	text-align: justify;
+	padding: 2% 0%;
+	font-family: sans-serif, Georgia, AdobeArabic;
+}
+a{
+	color: #0278ae;
+}

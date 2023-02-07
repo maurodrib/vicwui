@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>VICWÜI-MEDIC</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scalable=1.0, maximum-scalable=1.0, minimum-scalable=1.0">
+		<meta name="description" content="Sistema de control de procesos administrativos médicos o servicios de salud">
+		<meta name="keywords" content="Sistema de control de procesos administrativos médicos o servicios de salud">
+		<meta name="author" content="VICWÜI S.A.S, Mauricio Rodríguez Bravo & Maria Mercedes Vidarte Pastrana">
+		<link rel="icon" href="img/icon.png" type="image/png" sizes="16x16">
+		<link rel="stylesheet" href="css/generic.css" type="text/css">
+		<link rel="stylesheet" href="css/index.css" type="text/css">
+		<link rel="stylesheet" href="css/resolution.css" type="text/css">
+		<script src="libraries/jquery.min-v3.4.1.js"></script>
+		<script src="js/security.js"></script>
+		<script src="js/configuration.js"></script>
+	</head>
+	<body>
+		<main id="main">
+			<section id="box-section">
+				<img id="avatar" src="img/logo.png">
+				<!-- Form ingreso -->
+                <form id="form-ingreso" name="form-ingreso" method="post" action="">
+                    <h1>Iniciar Sesión</h1>
+                    <input oninput="validacionIndex('form-ingreso-email')" id="form-ingreso-email" type="email" name="form-ingreso-email" placeholder="Correo electrónico:" maxlength="50" minlength="4" title="Introduce un correo electrónico valido." pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required/>
+                    <input oninput="validacionIndex('form-ingreso-password')" id="form-ingreso-password" type="password" name="form-ingreso-password" placeholder="Contraseña:" maxlength="25" minlength="8" title="Introduce la contraseña de 8 hasta 25 caracteres." pattern="{8,25}" required/>
+                    <input id="prueba" type="submit" value="Entrar">
+                </form>
+				<!-- Form recuperar -->
+                <form id="form-recuperar" name="form-recuperar" method="post" action="">
+					<h1>Recuperar Cuenta</h1>
+					<p>Ingresa tu documento de identificación.</p>
+					<select onfocus="validacionIndex('form-recuperar-t-identificacion')" onblur="validacionIndex('form-recuperar-t-identificacion')" id="form-recuperar-t-identificacion" name="form-recuperar-t-identificacion" required>
+						<option value="">Tipo de identificación:</option>
+						<option value="1">Cédula Ciudadanía (CC)</option>
+						<option value="2">Cédula Extranjería (CE)</option>
+						<option value="3">Número Identificación Tributaria (NIT)</option>
+						<option value="4">Pasaporte (PP)</option>
+						<option value="5">Registro Civil Nacimiento (RCN)</option>
+						<option value="6">Tarjeta Extranjería (TE)</option>
+						<option value="7">Tarjeta Identidad (TI)</option>
+					</select>
+					<input oninput="validacionIndex('form-recuperar-identificacion')" id="form-recuperar-identificacion" type="text" name="form-recuperar-identificacion" placeholder="Número identificación:" maxlength="25" minlength="6" title="Introduce tu número de identificación." pattern="^[\d]{6,25}" required/>
+					<input type="submit" name="buscar" value="Buscar">
+					<input type="button" onclick="history.go()" name="cancelar" value="Cancelar">
+				</form> 
+				<!-- Form crear -->
+				<form id="form-c-cuenta" name="form-c-cuenta" method="post" action="">
+					<h1>Crear Cuenta</h1>
+					<select onfocus="validacionIndex('form-c-cuenta-t-cuenta')" onblur="validacionIndex('form-c-cuenta-t-cuenta')" id="form-c-cuenta-t-cuenta" name="form-c-cuenta-t-cuenta" required>
+						<option value="">Tipo de usuario:</option>
+						<option value="1">Paciente</option>
+						<option value="2">Entidad Prestadora de Salud (E.P.S)</option>
+					</select>
+					<select onfocus="validacionIndex('form-c-cuenta-t-identificacion')" onblur="validacionIndex('form-c-cuenta-t-identificacion')" id="form-c-cuenta-t-identificacion" name="form-c-cuenta-t-identificacion" required>
+						<option value="">Tipo de identificación:</option>
+						<option value="1">Cédula Ciudadanía (CC)</option>
+						<option value="2">Cédula Extranjería (CE)</option>
+						<option value="3">Número Identificación Tributaria (NIT)</option>
+						<option value="4">Pasaporte (PP)</option>
+						<option value="5">Registro Civil Nacimiento (RCN)</option>
+						<option value="6">Tarjeta Extranjería (TE)</option>
+						<option value="7">Tarjeta Identidad (TI)</option>
+					</select>
+					<input oninput="validacionIndex('form-c-cuenta-identificacion')" id="form-c-cuenta-identificacion" type="text" name="form-c-cuenta-identificacion" placeholder="Número identificación:" maxlength="25" minlength="6" title="Introduce tu número de identificación." pattern="[\d]{6,25}" required/>
+					<input oninput="validacionIndex('form-c-cuenta-email')" id="form-c-cuenta-email" type="email" name="form-c-cuenta-email" placeholder="Correo electrónico:" maxlength="50" minlength="4" title="Introduce un correo electrónico valido." pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required/>
+					<input oninput="validacionIndex('form-c-cuenta-password')" id="form-c-cuenta-password" type="password" name="form-c-cuenta-password" placeholder="Contraseña:" maxlength="25" minlength="8" title="Introduce la contraseña de 8 hasta 25 caracteres." pattern="{8,25}" required/>
+					<p>Al hacer clic en “Registrarse”, aceptas nuestras <a href="" target="_blank">Condiciones</a>, <a href="" target="_blank">Política de datos</a> y <a href="" target="_blank">Política de cookies</a>.</p>
+					<input type="submit" name="registrar" value="Registrarse">
+					<input type="button" onclick="history.go()" name="cancelar" value="Cancelar">
+				</form> 
+				<!-- Div btns -->
+				<div id="toggle-btn">
+					<span onclick="clearValidacionIndex()" id="r-cuenta">¿Recuperar Cuenta?</span>
+					<span onclick="clearValidacionIndex()" id="c-cuenta">Regístrate</span>
+				</div>
+			</section>
+		</main>
+		<footer id="footer">
+			<address>Neiva - Huila, Colombia</address>
+			<small>Vicwüi &copy; <?php echo date ("Y");?></small>
+		</footer>
+	</body>
+</html>
